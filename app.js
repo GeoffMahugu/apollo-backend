@@ -1,12 +1,52 @@
+// # IMPORTS -/
 
-const express = require('express')
-const app = express()
-const port = 3000
+const bodyParser = require('body-parser');
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const { graphqlHTTP } = require('express-graphql');
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+const graphqlSchema = require('./graphql/schema');
+const graphqlResolver = require('./graphql/resolvers');
+
+const config = require('./config/config.json');
+
+// # EXPRESS::INITIALIZE APP -/
+
+const app = express();
+
+// # ADD MIDDLEWARE -/
+
+app.use(bodyParser.json());
+
+app.use(cors());
+
+// # GRAPHQL::API SERVICE -/
+
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema: graphqlSchema,
+    rootValue: graphqlResolver,
+    graphiql: true,
+  })
+);
+
+
+// # MONGOOSE::DATABASE SETUP -/
+
+
+// mongoose
+//   .connect(
+//     `mongodb+srv://${-USER-}:${-PASSWORD-}@cluster0-mvcmf.mongodb.net/${-DATABASE_NAME-}?retryWrites=true&w=majority`,
+//     {
+//       useUnifiedTopology: true,
+//       useNewUrlParser: true,
+//       useCreateIndex: true,
+//     }
+//   )
+//   .then(() => {
+//     app.listen(3000, console.log('Connected to Port 3000.'));
+//   })
+//   .catch((err) => console.log(err));
