@@ -141,3 +141,54 @@ Mongoose will enable us create database Schemas and interact with the database e
 This will enable us to create the GraphQL API Server. To install the module run:
 
 ``npm install express-graphql graphql --save``
+
+### Create GraphQL API Service
+
+For this we will need to update the ``app.js`` for GraphQL API Service.
+
+This is the content:
+
+```
+# IMPORTS -/
+
+const bodyParser = require('body-parser');
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+
+const { graphqlHTTP } = require('express-graphql');
+
+const graphqlSchema = require('./graphql/schema');
+const graphqlResolver = require('./graphql/resolvers');
+
+const config = require('./config/config.json');
+
+# EXPRESS::INITIALIZE APP -/
+
+const app = express();
+
+# ADD MIDDLEWARE -/
+
+app.use(bodyParser.json());
+
+app.use(cors());
+
+# GRAPHQL::API SERVICE -/
+
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema: graphqlSchema,
+    rootValue: graphqlResolver,
+    graphiql: true,
+  })
+);
+
+
+# MONGOOSE::DATABASE SETUP -/
+
+
+
+
+
+```
