@@ -7,10 +7,8 @@ const cors = require('cors');
 
 const { graphqlHTTP } = require('express-graphql');
 
-const graphqlSchema = require('./graphql/schema');
-const graphqlResolver = require('./graphql/resolvers');
-
-const config = require('./config/config.json');
+// const graphqlSchema = require('./graphql/schema');
+// const graphqlResolver = require('./graphql/resolvers');
 
 // # EXPRESS::INITIALIZE APP -/
 
@@ -24,14 +22,14 @@ app.use(cors());
 
 // # GRAPHQL::API SERVICE -/
 
-app.use(
-  '/graphql',
-  graphqlHTTP({
-    schema: graphqlSchema,
-    rootValue: graphqlResolver,
-    graphiql: true,
-  })
-);
+// app.use(
+//   '/graphql',
+//   graphqlHTTP({
+//     schema: graphqlSchema,
+//     rootValue: graphqlResolver,
+//     graphiql: true,
+//   })
+// );
 
 
 // # MONGOOSE::DATABASE SETUP -/
