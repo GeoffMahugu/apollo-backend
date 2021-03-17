@@ -1,0 +1,23 @@
+{
+  "name": "apollo-backend",
+  "version": "1.0.0",
+  "description": "This is a demo backend built to serve GraphQL; Express server & MongoDB using Mongoose",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "GraphQL",
+    "Apollo",
+    "Express",
+    "MongoDB",
+    "Mongoose",
+    "Docker"
+  ],
+  "author": "GeoffMahugu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
