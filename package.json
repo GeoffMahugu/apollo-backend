@@ -4,7 +4,8 @@
   "description": "This is a demo backend built to serve GraphQL; Express server & MongoDB using Mongoose",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon ./app.js localhost 8080"
   },
   "keywords": [
     "Node",
@@ -19,5 +20,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
