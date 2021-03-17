@@ -138,7 +138,7 @@ Mongoose will enable us create database Schemas and interact with the database e
 
 ### Install express-graphql
 
-This will enable us to create the GraphQL API Server. To install the module run:
+This will enable us to create the (GraphQL)[https://graphql.org/graphql-js/running-an-express-graphql-server/] API Server. To install the module run:
 
 ``npm install express-graphql graphql --save``
 
@@ -188,7 +188,19 @@ app.use(
 # MONGOOSE::DATABASE SETUP -/
 
 
-
+mongoose
+  .connect(
+    `mongodb+srv://${-USER-}:${-PASSWORD-}@cluster0-mvcmf.mongodb.net/${-DATABASE_NAME-}?retryWrites=true&w=majority`,
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useCreateIndex: true,
+    }
+  )
+  .then(() => {
+    app.listen(3000, console.log('Connected to Port 3000.'));
+  })
+  .catch((err) => console.log(err));
 
 
 ```
