@@ -137,3 +137,7 @@ Mongoose will enable us create database Schemas and interact with the database e
 
 
 ### Install express-graphql
+
+This will enable us to create the GraphQL API Server. To install the module run:
+
+``npm install express-graphql graphql --save``
