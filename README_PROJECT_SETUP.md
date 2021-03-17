@@ -110,8 +110,21 @@ services:
 
 ```
 
+This will create a MongoDatabase container named ``mean_mongo``
+
+This will also create a database named ``mean-ecommerce`` database username will be ``admin1`` with a password ``password``
+
 #### Run Docker Images
 
 To spin up the containerized environment, run:
 
 ``docker-compose -f "./docker-compose.yml" up -d --build``
+
+
+### Install Mongoose
+
+Mongoose will enable us create database Schemas and interact with the database easily (ORM)
+
+``npm install mongoose --save``
+
+
