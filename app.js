@@ -37,16 +37,17 @@ app.use(
 // # MONGOOSE::DATABASE SETUP -/
 
 
-// mongoose
-//   .connect(
-//     `mongodb+srv://${-USER-}:${-PASSWORD-}@cluster0-mvcmf.mongodb.net/${-DATABASE_NAME-}?retryWrites=true&w=majority`,
-//     {
-//       useUnifiedTopology: true,
-//       useNewUrlParser: true,
-//       useCreateIndex: true,
-//     }
-//   )
-//   .then(() => {
-//     app.listen(3000, console.log('Connected to Port 3000.'));
-//   })
-//   .catch((err) => console.log(err));
+mongoose
+  .connect(
+    // `mongodb+srv://${-USER-}:${-PASSWORD-}@cluster0-mvcmf.mongodb.net/${-DATABASE_NAME-}?retryWrites=true&w=majority`,
+    `mongodb+srv://admin:password@cluster0-mvcmf.mongodb.net/mean-ecommerce?retryWrites=true&w=majority`,
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useCreateIndex: true,
+    }
+  )
+  .then(() => {
+    app.listen(3000, console.log('Connected to Port 3000.'));
+  })
+  .catch((err) => console.log(err));
