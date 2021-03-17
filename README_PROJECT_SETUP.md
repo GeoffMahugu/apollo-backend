@@ -24,6 +24,10 @@ Install (express.js)[https://expressjs.com/en/starter/hello-world.html] as a dep
 
 ``npm install express --save``
 
+install other dependancies:
+
+``npm install cors body-parser --save``
+
 Then create your entry app. In my case will be using ``app.js``
 
 Paste the Hello World starter code in the ``app.js`` file:
@@ -121,6 +125,10 @@ To spin up the containerized environment, run:
 ``docker-compose -f "./docker-compose.yml" up -d --build``
 
 
+#### Visualize MongoDB
+
+you can use any GUI visualizer for mongoDB, In my case will use (Studio3T)[https://studio3t.com/download/]
+
 ### Install Mongoose
 
 Mongoose will enable us create database Schemas and interact with the database easily (ORM)
@@ -128,3 +136,4 @@ Mongoose will enable us create database Schemas and interact with the database e
 ``npm install mongoose --save``
 
 
+### Install express-graphql
