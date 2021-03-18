@@ -8,10 +8,10 @@ module.exports = buildSchema(`
         discount: Number
     }    
     type ProductData {
-        product: [Product!]!
+        products: [Product!]!
     }
     type RootQuery{
-        product: ProductData!
+        products: ProductData!
     }
     schema {
         query: RootQuery
