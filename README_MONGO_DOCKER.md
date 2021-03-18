@@ -10,4 +10,8 @@ To access the docker image run ``docker ps`` to get the ID of the running contai
 
 #### To Authenticate a dabase using your credentials:
 
-``mongo -u <USERNAME> -p <PASSWORD> --authenticationDatabase <DATABASE_NAME> ``
+``mongo -u <USERNAME> -p <PASSWORD> --authenticationDatabase <DATABASE_NAME>``
+
+in my case that would be:
+
+``mongo -u admin -p password --authenticationDatabase mean-ecommerce``
