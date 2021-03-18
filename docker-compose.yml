@@ -24,14 +24,17 @@ services:
   database: # name of service: database
     image: mongo:latest # specify image to build container from
     container_name: mean_mongo
+    env_file:
+      - ./.env
     environment:
-      - MONGO_INITDB_DATABASE=mean-ecommerce
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=password
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
     volumes:
       - ./mongo:/home/mongodb
       # - ./mongo/init-db.d/:/docker-entrypoint-initdb.d/
-      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+      - ./docker/:/docker-entrypoint-initdb.d/
       - ./mongo/db:/data/db
     ports:
       - "27017:27017" # specify port forewarding
+
