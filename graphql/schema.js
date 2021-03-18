@@ -5,7 +5,7 @@ module.exports = buildSchema(`
         _id:ID!
         description: String!
         price: Float!
-        discount: Number
+        discount: Int
     }    
     type ProductData {
         products: [Product!]!

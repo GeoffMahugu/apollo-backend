@@ -37,7 +37,7 @@ app.use(
 
 mongoose
   .connect(
-    `mongodb://admin:password@host1.com:27017/mean-ecommerce?retryWrites=true&w=majority`,
+    `mongodb://admin:password@localhost:27017/mean-ecommerce?retryWrites=true&w=majority`,
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,
