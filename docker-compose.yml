@@ -27,12 +27,11 @@ services:
     env_file:
       - ./.env
     environment:
-      - MONGO_INITDB_DATABASE:mean-ecommerce
-      - MONGO_INITDB_ROOT_USERNAME:admin
-      - MONGO_INITDB_ROOT_PASSWORD:password
+      MONGO_INITDB_ROOT_USERNAME: aplollo-user
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: aplollo-db
     volumes:
       - ./mongo:/home/mongodb
-      # - ./mongo/init-db.d/:/docker-entrypoint-initdb.d/
       - ./docker/:/docker-entrypoint-initdb.d/
       - ./mongo/db:/data/db
     ports:
