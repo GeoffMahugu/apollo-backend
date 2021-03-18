@@ -37,7 +37,9 @@ app.use(
 
 mongoose
   .connect(
-    `mongodb://admin:password@localhost:27017/mean-ecommerce?retryWrites=true&w=majority`,
+    // `mongodb://admin:password@localhost:27017/mean-ecommerce?retryWrites=true&w=majority`,
+    // `mongodb://localhost:27017/mean-ecommerce?retryWrites=true&w=majority`,
+    'mongodb://admin:password@localhost:27017/admin',
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,

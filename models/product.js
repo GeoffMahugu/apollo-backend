@@ -13,10 +13,12 @@ const productSchema = new Schema ({
     },
     price: {
         type: Number,
+        min: [1],
         required: true,
     },
     discount: {
         type: Number,
+        min: [1],
         required: false,
     }
 });
