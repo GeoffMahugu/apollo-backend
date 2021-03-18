@@ -24,12 +24,10 @@ services:
   database: # name of service: database
     image: mongo:latest # specify image to build container from
     container_name: mean_mongo
-    env_file:
-      - ./.env
     environment:
-      MONGO_INITDB_ROOT_USERNAME: aplollo-user
+      MONGO_INITDB_ROOT_USERNAME: backend_admin
       MONGO_INITDB_ROOT_PASSWORD: password
-      MONGO_INITDB_DATABASE: aplollo-db
+      MONGO_INITDB_DATABASE: mean-ecommerce
     volumes:
       - ./mongo:/home/mongodb
       - ./docker/:/docker-entrypoint-initdb.d/

@@ -34,12 +34,9 @@ app.use(
 
 // # MONGOOSE::DATABASE SETUP -/
 
-
 mongoose
   .connect(
-    // `mongodb://admin:password@localhost:27017/mean-ecommerce?retryWrites=true&w=majority`,
-    // `mongodb://localhost:27017/mean-ecommerce?retryWrites=true&w=majority`,
-    'mongodb://admin:password@localhost:27017/admin',
+    'mongodb://backend_admin:password@localhost:27017/mean-ecommerce',
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,
