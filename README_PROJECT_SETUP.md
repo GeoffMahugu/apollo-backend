@@ -83,9 +83,33 @@ We will use a docker image to quickly setup an instance of a mongoDb with a pers
 
 We use docker-compose to spin up the docker images.
 
+First crea
+
 #### Create docker-compose.yml 
 
-We will first create a ``docker.compose.yml`` file in the root of the project.
+
+We will first have to create the configurations for MongoDb. For this we will create a folder called mongo.docker and create the ``mongo_init.js`` configuration file.
+
+For the file contents:
+
+```
+
+db.createUser(
+    {
+        user: "backend_admin",
+        pwd: "password",
+        roles: [
+            {
+                role: "readWrite",
+                db: "mean-ecommerce"
+            }
+        ]
+    }
+);
+
+```
+
+We will then create a ``docker.compose.yml`` file in the root of the project.
 
 Paste this in the file as it contains configurations for the database images:
 
@@ -100,14 +124,12 @@ services:
     image: mongo:latest # specify image to build container from
     container_name: mean_mongo
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=password
-      - MONGO_DB_USERNAME=admin1
-      - MONGO_DB_PASSWORD=password
-      - MONGO_DB=mean-ecommerce
+      MONGO_INITDB_ROOT_USERNAME: backend_admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: mean-ecommerce
     volumes:
       - ./mongo:/home/mongodb
-      - ./mongo/init-db.d/:/docker-entrypoint-initdb.d/
+      - ./docker/:/docker-entrypoint-initdb.d/
       - ./mongo/db:/data/db
     ports:
       - "27017:27017" # specify port forewarding
@@ -116,7 +138,7 @@ services:
 
 This will create a MongoDatabase container named ``mean_mongo``
 
-This will also create a database named ``mean-ecommerce`` database username will be ``admin1`` with a password ``password``
+This will also create a database named ``mean-ecommerce`` database username will be ``backend_admin`` with a password ``password``
 
 #### Run Docker Images
 
@@ -128,6 +150,7 @@ To spin up the containerized environment, run:
 #### Visualize MongoDB
 
 you can use any GUI visualizer for mongoDB, In my case will use (Studio3T)[https://studio3t.com/download/]
+
 
 ### Install Mongoose
 
@@ -190,7 +213,7 @@ app.use(
 
 mongoose
   .connect(
-    `mongodb+srv://${-USER-}:${-PASSWORD-}@cluster0-mvcmf.mongodb.net/${-DATABASE_NAME-}?retryWrites=true&w=majority`,
+    'mongodb://backend_admin:password@localhost:27017/mean-ecommerce',
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,
