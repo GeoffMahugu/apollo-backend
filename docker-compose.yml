@@ -26,10 +26,11 @@ services:
     container_name: mean_mongo
     environment:
       - MONGO_INITDB_DATABASE=mean-ecommerce
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=password
-      - MONGO_DB_USERNAME=admin1
-      - MONGO_DB_PASSWORD=password
+      - MONGO_DB_DATABASE=mean-contacts
+        # - MONGO_INITDB_ROOT_USERNAME=admin
+        # - MONGO_INITDB_ROOT_PASSWORD=password
+        # - MONGO_DB_USERNAME=admin1
+        # - MONGO_DB_PASSWORD=password
     volumes:
       - ./mongo:/home/mongodb
       - ./mongo/init-db.d/:/docker-entrypoint-initdb.d/
