@@ -21,8 +21,8 @@ const productSchema = new Schema ({
         min: [1],
         required: false,
     },
-    created_at: {type: Date, default: new Date.now()},
-    updated_at: {type: Date, default: new Date.now()}
+    created_at: {type: Date, default: Date.now},
+    updated_at: {type: Date, default: Date.now()}
 });
 
 module.exports = mongoose.model('Product', productSchema);
