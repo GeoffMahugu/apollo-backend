@@ -3,15 +3,17 @@
 This documentation will contain the setup guide to setup a simple NodeJS backend with a graphql service.
 We will be using the MEAN stack, backend being MongoDB and using Mongoose to do the ORM opperations.
 
+![Screenshot from 2021-03-19 16-32-39](https://user-images.githubusercontent.com/17265995/111789082-d51e3080-88d1-11eb-85e9-9ecc3708a31f.jpg)
+
 
 ### Prerequisites
 
 These are some of the technologies used:
 
- - (Apollo GraphQL)[https://www.apollographql.com/docs/]
- - (Express.js)[https://expressjs.com/en/starter/hello-world.html]
- - (Docker)[https://docs.docker.com/get-started/]
- - (DockerCompose)[https://docs.docker.com/compose/]
+ - [Apollo GraphQL](https://www.apollographql.com/docs/)
+ - [Express.js](https://expressjs.com/en/starter/hello-world.html)
+ - [Docker](https://docs.docker.com/get-started/)
+ - [DockerCompose](https://docs.docker.com/compose/)
 
 
 ### Initialize the project
@@ -20,7 +22,7 @@ Run ``npm init`` to initialize the project.
 
 ### Express.js Setup 
 
-Install (express.js)[https://expressjs.com/en/starter/hello-world.html] as a dependancy module.
+Install [Express.js](https://expressjs.com/en/starter/hello-world.html) as a dependancy module.
 
 ``npm install express --save``
 
@@ -51,7 +53,7 @@ app.listen(port, () => {
 
 Lets now run the express app. On the terminal run ``node app.js``
 
-Proceed to ``https://localhost:3000`` to see the response on your browser.
+Proceed to https://localhost:3000 to see the response on your browser.
 
 
 #### Install nodemon
@@ -74,7 +76,7 @@ to run the serve, run this command on your terminal:
 
 ``npm run serve``
 
-and access the serve at this uri ``https://localhost:3000`
+and access the serve at this uri https://localhost:3000
 
 
 ### MongoDB setup
@@ -149,11 +151,11 @@ To spin up the containerized environment, run:
 
 **IMPORTANT:** 
 
-To read on how to setup your docker environment read the (README_MONGO_DOCKER.md)[README_MONGO_DOCKER.md] file
+To read on how to setup your docker environment read [README_MONGO_DOCKER.md](README_MONGO_DOCKER.md) file
 
 #### Visualize MongoDB
 
-you can use any GUI visualizer for mongoDB, In my case will use (Studio3T)[https://studio3t.com/download/]
+you can use any GUI visualizer for mongoDB, In my case will use [Studio3T](https://studio3t.com/download/)
 
 
 ### Install Mongoose
@@ -165,7 +167,7 @@ Mongoose will enable us create database Schemas and interact with the database e
 
 ### Install express-graphql
 
-This will enable us to create the (GraphQL)[https://graphql.org/graphql-js/running-an-express-graphql-server/] API Server. To install the module run:
+This will enable us to create the [GraphQL](https://graphql.org/graphql-js/running-an-express-graphql-server/) API Server. To install the module run:
 
 ``npm install express-graphql graphql --save``
 
@@ -234,17 +236,17 @@ mongoose
 
 #### GraphQL Schema
 
-This file (schema.js)[graphql/schema.js] contains the business logic and CRUD functionality.
+This file [schema.js](graphql/schema.js) contains the business logic and CRUD functionality.
 #### GraphQL Resolvers
 
-This file (resolvers.js)[graphql/resolvers.js] contains the business logic and CRUD functionality.
+This file [resolvers.js](graphql/resolvers.js) contains the business logic and CRUD functionality.
 
 
 ### CRUD 
 
 Once the project is setup we can proceed to perfom CRUD on out product schema.
 
-To access the (graphql interface)[http://localhost:3000/graphql] go to http://localhost:3000/graphql
+To access the [graphql interface](http://localhost:3000/graphql) go to http://localhost:3000/graphql
 
 
 #### CREAT Product Mutation:
@@ -410,3 +412,7 @@ response should be (close to this):
 }
 
 ```
+
+
+
+**FIN**
