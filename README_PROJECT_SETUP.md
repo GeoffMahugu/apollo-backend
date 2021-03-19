@@ -147,6 +147,10 @@ To spin up the containerized environment, run:
 ``docker-compose -f "./docker-compose.yml" up -d --build``
 
 
+**IMPORTANT:** 
+
+To read on how to setup your docker environment read the (README_MONGO_DOCKER.md)[README_MONGO_DOCKER.md] file
+
 #### Visualize MongoDB
 
 you can use any GUI visualizer for mongoDB, In my case will use (Studio3T)[https://studio3t.com/download/]
