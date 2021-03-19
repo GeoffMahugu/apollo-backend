@@ -12,5 +12,17 @@ module.exports = {
                 }
             })
         }
-    } 
+    },
+    createProduct: async function ({ productInput }) {
+        const product = new Product({
+          description: productInput.description,
+          price: productInput.price,
+          discount: productInput.discount,
+        });
+        const createdProduct= await product.save();
+        return {
+          ...createdProduct._doc,
+          _id: createdProduct._id.toString(),
+        };
+    },
 }
