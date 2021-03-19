@@ -42,9 +42,10 @@ module.exports = {
      * { name, description, price, discount, created_at, updated_at}
      * @query
      * 
-        {
-            products{products{_id, description, price, discount}}
-        }
+       {
+        products{products{_id, description, price, discount,created_at,updated_at}}
+       }
+
      */
         products: async function() {
             const products = await Product.find();
