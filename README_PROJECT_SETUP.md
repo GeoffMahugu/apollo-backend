@@ -147,6 +147,10 @@ To spin up the containerized environment, run:
 ``docker-compose -f "./docker-compose.yml" up -d --build``
 
 
+**IMPORTANT:** 
+
+To read on how to setup your docker environment read the (README_MONGO_DOCKER.md)[README_MONGO_DOCKER.md] file
+
 #### Visualize MongoDB
 
 you can use any GUI visualizer for mongoDB, In my case will use (Studio3T)[https://studio3t.com/download/]
@@ -225,5 +229,184 @@ mongoose
   })
   .catch((err) => console.log(err));
 
+
+```
+
+#### GraphQL Schema
+
+This file (schema.js)[graphql/schema.js] contains the business logic and CRUD functionality.
+#### GraphQL Resolvers
+
+This file (resolvers.js)[graphql/resolvers.js] contains the business logic and CRUD functionality.
+
+
+### CRUD 
+
+Once the project is setup we can proceed to perfom CRUD on out product schema.
+
+To access the (graphql interface)[http://localhost:3000/graphql] go to http://localhost:3000/graphql
+
+
+#### CREAT Product Mutation:
+
+To create a new product, run this mutation on the graphql console.
+
+```
+
+mutation {
+  createProduct(productInput: { name: "Test Product 1",description: "Test Product",price: 7000.50,discount: 10}){
+      _id,
+      name,
+      description,
+      price,
+      discount,
+      created_at,
+      updated_at
+  }
+}
+
+```
+
+response should be:
+
+```
+{
+  "data": {
+    "createProduct": {
+      "_id": "6054a67820f5c5716e99b657",
+      "name": "Test Product 1",
+      "description": "Test Product",
+      "price": 7000.5,
+      "discount": 10,
+      "created_at": "1616160376613",
+      "updated_at": "1616159865675"
+    }
+  }
+}
+
+```
+
+
+#### READ: Query Product:
+
+To read all product, run this query on the graphql console.
+
+
+```
+{
+  products{products{_id, description, price, discount,created_at,updated_at}}
+}
+
+```
+
+response should be (close to this):
+
+```
+{
+  "data": {
+    "products": {
+      "products": [
+        {
+          "_id": "605496c1e3ad5c614f21c291",
+          "description": "Test Product",
+          "price": 7000.5,
+          "discount": 10,
+          "created_at": "1616156353503",
+          "updated_at": "1616156297912"
+        },
+        {
+          "_id": "6054a67820f5c5716e99b657",
+          "description": "Test Product1",
+          "price": 7030.5,
+          "discount": 10,
+          "created_at": "1616160376613",
+          "updated_at": "1616159865675"
+        }
+      ]
+    }
+  }
+}
+
+```
+
+
+
+#### UPDATE Product Mutation:
+
+To update a product, run this mutation on the graphql console.
+
+
+```
+mutation {
+  updateProduct(id:"6054a67820f5c5716e99b657",productInput: { name: "Test Product 2",description: "Test Product",price: 7500.50,discount: 8}){
+      _id,
+      name,
+      description,
+      price,
+      discount,
+      created_at,
+      updated_at
+  }
+}
+
+```
+
+response should be (close to this):
+
+```
+{
+  "data": {
+    "updateProduct": {
+      "_id": "6054a67820f5c5716e99b657",
+      "name": "Test Product 2",
+      "description": "Test Product",
+      "price": 7500.5,
+      "discount": 8,
+      "created_at": "1616160376613",
+      "updated_at": "1616159865675"
+    }
+  }
+}
+
+```
+
+#### DELETE Product Mutation:
+
+To delete a product, run this mutation on the graphql console.
+
+
+```
+
+mutation {
+  deleteProduct(id:"6054a67820f5c5716e99b657"){
+      _id,
+      name,
+      description,
+      price,
+      discount,
+      created_at,
+      updated_at
+  }
+}
+
+
+```
+
+response should be (close to this):
+
+```
+{
+  "data": {
+    "deleteProduct": {
+      "_id": "6054a67820f5c5716e99b657",
+      "name": "Test Product 2",
+      "description": "Test Product",
+      "price": 7500.5,
+      "discount": 8,
+      "created_at": "1616160376613",
+      "updated_at": "1616159865675"
+    }
+  }
+}
 
 ```
