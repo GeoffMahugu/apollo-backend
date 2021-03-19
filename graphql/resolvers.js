@@ -6,6 +6,11 @@ module.exports = {
      * 
      * @returns Product 
      * { name, description, price, discount, created_at, updated_at}
+     * @query
+     * 
+        {
+            products{products{_id, description, price, discount}}
+        }
      */
     products: async function() {
         const products = await Product.find();
@@ -14,9 +19,9 @@ module.exports = {
                 return {
                     ...q._doc,
                     _id: q._id.toString(),
-                }
+                };
             })
-        }
+        };
     },
 
     /**
@@ -52,4 +57,4 @@ module.exports = {
           _id: createdProduct._id.toString(),
         };
     },
-}
+};
