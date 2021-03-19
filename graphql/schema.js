@@ -7,8 +7,8 @@ module.exports = buildSchema(`
         description: String!
         price: Float!
         discount: Int
-        created_at: Date
-        updated_at: Date
+        created_at: GraphQLDateTime!
+        updated_at: GraphQLDateTime!
     }    
     type ProductData {
         products: [Product!]!
