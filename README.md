@@ -60,12 +60,12 @@ Proceed to https://localhost:3000 to see the response on your browser.
 
 This will help us serve the express application and do hot reloads.
 
-We will install it as a dev-dependancy:
+We will install it as a dev-dependency:
 
 ``npm install --save-dev nodemon``
 
 
-and on the paclahe.json file, scripts section we add this command:
+and on the (package.json)[package.json] file, scripts section we add this command:
 
 ```
 "scripts": {
@@ -81,7 +81,7 @@ and access the serve at this uri https://localhost:3000
 
 ### MongoDB setup
 
-We will use a docker image to quickly setup an instance of a mongoDb with a persistent storage on your local disk.
+We will use a docker image to quickly set up an instance of a MongoDB with persistent storage on your local disk.
 
 We use docker-compose to spin up the docker images.
 
@@ -89,7 +89,7 @@ We use docker-compose to spin up the docker images.
 #### Create docker-compose.yml 
 
 
-We will first have to create the configurations for MongoDb. For this we will create a folder called mongo.docker and create the ``mongo_init.js`` configuration file.
+We will first have to create the configurations for MongoDB. For this, we will create a folder called mongo.docker and create the ``mongo_init.js`` configuration file.
 
 For the file contents:
 
@@ -110,7 +110,7 @@ db.createUser(
 
 ```
 
-We will then create a ``docker.compose.yml`` file in the root of the project.
+We will then create a ``docker.compose.yml`` file at the root of the project.
 
 Paste this in the file as it contains configurations for the database images:
 
@@ -154,14 +154,14 @@ To read on how to setup your docker environment read [README_MONGO_DOCKER.md](RE
 
 #### Visualize MongoDB
 
-you can use any GUI visualizer for mongoDB, In my case will use [Studio3T](https://studio3t.com/download/)
+you can use any GUI visualizer for MongoDB, In my case will use [Studio3T](https://studio3t.com/download/)
 
 ![Screenshot from 2021-03-19 17-42-24](https://user-images.githubusercontent.com/17265995/111798209-e881c980-88da-11eb-881a-20c3faf13ad4.jpg)
 
 
 ### Install Mongoose
 
-Mongoose will enable us create database Schemas and interact with the database easily (ORM)
+Mongoose will enable us to create database Schemas and interact with the database easily (ORM)
 
 ``npm install mongoose --save``
 
@@ -174,11 +174,10 @@ This will enable us to create the [GraphQL](https://graphql.org/graphql-js/runni
 
 ### Create GraphQL API Service
 
-For this we will need to update the ``app.js`` for GraphQL API Service.
-
-This is the content:
+For this, we will need to update the ``app.js`` for GraphQL API Service.
 
 ```
+
 # IMPORTS -/
 
 const bodyParser = require('body-parser');
@@ -245,14 +244,14 @@ This file [resolvers.js](graphql/resolvers.js) contains the business logic and C
 
 ### CRUD 
 
-Once the project is setup we can proceed to perfom CRUD on out product schema.
+Once the project is setup we can proceed to perform CRUD on our product schema.
 
 To access the [graphql interface](http://localhost:3000/graphql) go to http://localhost:3000/graphql
 
 
 #### CREAT Product Mutation:
 
-To create a new product, run this mutation on the graphql console.
+To create a new product, run this mutation on the graphQl console.
 
 ```
 
@@ -292,7 +291,7 @@ response should be:
 
 #### READ: Query Product:
 
-To read all product, run this query on the graphql console.
+To read all product, run this query on the graphQl console.
 
 
 ```
@@ -336,7 +335,7 @@ response should be (close to this):
 
 #### UPDATE Product Mutation:
 
-To update a product, run this mutation on the graphql console.
+To update a product, run this mutation on the graphQl console.
 
 
 ```
@@ -375,7 +374,7 @@ response should be (close to this):
 
 #### DELETE Product Mutation:
 
-To delete a product, run this mutation on the graphql console.
+To delete a product, run this mutation on the graphQl console.
 
 
 ```

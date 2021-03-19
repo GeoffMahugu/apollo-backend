@@ -1,6 +1,6 @@
 ### Mongo on Docker
 
-This documentation will contain steps in order to setup and debug your mongo docker image.
+This documentation will contain steps in order to set up and debug your mongo docker image.
 
 #### Access the docker image
 
@@ -8,7 +8,7 @@ To access the docker image run ``docker ps`` to get the ID of the running contai
 
 ``docker exec -it <CONTAINER_ID> bash``
 
-#### To Authenticate a dabase using your credentials:
+#### To Authenticate a database using your credentials:
 
 ``mongo -u <USERNAME> -p <PASSWORD> --authenticationDatabase <DATABASE_NAME>``
 
