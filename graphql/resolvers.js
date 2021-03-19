@@ -2,30 +2,9 @@ const Product = require('../models/product');
 
 
 module.exports = {
+    
     /**
-     * 
-     * @returns Product 
-     * { name, description, price, discount, created_at, updated_at}
-     * @query
-     * 
-        {
-            products{products{_id, description, price, discount}}
-        }
-     */
-    products: async function() {
-        const products = await Product.find();
-        return {
-            products: products.map((q)=>{
-                return {
-                    ...q._doc,
-                    _id: q._id.toString(),
-                };
-            })
-        };
-    },
-
-    /**
-     * 
+     * CREATE PRODUCT - 
      * @param { name, description, price, discount} ProductInput
      * @returns Product
      * 
@@ -58,7 +37,29 @@ module.exports = {
     },
 
     /**
+     * READ: QUERY PRODUCT - 
+     * @returns Product 
+     * { name, description, price, discount, created_at, updated_at}
+     * @query
      * 
+        {
+            products{products{_id, description, price, discount}}
+        }
+     */
+        products: async function() {
+            const products = await Product.find();
+            return {
+                products: products.map((q)=>{
+                    return {
+                        ...q._doc,
+                        _id: q._id.toString(),
+                    };
+                })
+            };
+        },
+
+    /**
+     * UPDATE PRODUCT - 
      * @param {id}, { name, description, price, discount} ID,ProductInput
      * @returns Product
      * 
@@ -89,6 +90,37 @@ module.exports = {
         return {
           ...updatedProduct._doc,
           _id: updatedProduct._id.toString(),
+        };
+      },
+
+    /**
+     * DELETE PRODUCT - 
+     * @param {id} ID
+     * @returns Product
+     * 
+     * @mutation 
+     * mutation {
+        deleteProduct(id:"605497bce3ad5c614f21c292"){
+            _id,
+            name,
+            description,
+            price,
+            discount,
+            created_at,
+            updated_at
+        }
+       }
+
+     */
+    deleteProduct: async function ({ id, productInput }) {
+        const product = await Product.findById(id);
+        if (!product) {
+          throw new Error('Product Not found!');
+        }
+        await Product.findByIdAndRemove(id);
+        return {
+          ...product._doc,
+          _id: product._id.toString(),
         };
       },
 };

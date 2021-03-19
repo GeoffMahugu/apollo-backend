@@ -25,6 +25,7 @@ module.exports = buildSchema(`
     type RootMutation {
         createProduct(productInput:ProductInputData): Product!
         updateProduct(id: ID!, productInput:ProductInputData): Product!
+        deleteProduct(id: ID!): Product!
     }
     schema {
         query: RootQuery
