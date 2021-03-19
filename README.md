@@ -1,7 +1,7 @@
 ## MEAN STACK - Aplollo GraphQL Setup
 
-This documentation will contain the setup guide to setup a simple NodeJS backend with a graphql service.
-We will be using the MEAN stack, backend being MongoDB and using Mongoose to do the ORM opperations.
+This documentation will contain the setup guide to set up a simple NodeJS backend with a graphql service.
+We will be using the MEAN stack, backend being MongoDB and using Mongoose to do the ORM operations.
 
 ![Screenshot from 2021-03-19 16-32-39](https://user-images.githubusercontent.com/17265995/111789082-d51e3080-88d1-11eb-85e9-9ecc3708a31f.jpg)
 
@@ -22,11 +22,11 @@ Run ``npm init`` to initialize the project.
 
 ### Express.js Setup 
 
-Install [Express.js](https://expressjs.com/en/starter/hello-world.html) as a dependancy module.
+Install [Express.js](https://expressjs.com/en/starter/hello-world.html) as a dependency module.
 
 ``npm install express --save``
 
-install other dependancies:
+install other dependencies:
 
 ``npm install cors body-parser --save``
 
@@ -51,7 +51,7 @@ app.listen(port, () => {
 
 ```
 
-Lets now run the express app. On the terminal run ``node app.js``
+Let's now run the express app. On the terminal run ``node app.js``
 
 Proceed to https://localhost:3000 to see the response on your browser.
 
@@ -85,7 +85,6 @@ We will use a docker image to quickly setup an instance of a mongoDb with a pers
 
 We use docker-compose to spin up the docker images.
 
-First crea
 
 #### Create docker-compose.yml 
 
@@ -156,6 +155,8 @@ To read on how to setup your docker environment read [README_MONGO_DOCKER.md](RE
 #### Visualize MongoDB
 
 you can use any GUI visualizer for mongoDB, In my case will use [Studio3T](https://studio3t.com/download/)
+
+![Screenshot from 2021-03-19 17-42-24](https://user-images.githubusercontent.com/17265995/111798209-e881c980-88da-11eb-881a-20c3faf13ad4.jpg)
 
 
 ### Install Mongoose
