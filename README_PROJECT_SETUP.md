@@ -227,3 +227,22 @@ mongoose
 
 
 ```
+
+#### GraphQL Schema
+
+This file (schema.js)[graphql/schema.js] contains the business logic and CRUD functionality.
+#### GraphQL Resolvers
+
+This file (resolvers.js)[graphql/resolvers.js] contains the business logic and CRUD functionality.
+
+
+### CRUD 
+
+Once the project is setup we can proceed to perfom CRUD on out product schema.
+
+To access the (graphql interface)[http://localhost:3000/graphql] go to http://localhost:3000/graphql
+
+
+#### CREAT Product Mutation:
+
+
