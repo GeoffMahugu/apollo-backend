@@ -6,9 +6,9 @@ services:
     image: mongo:latest # specify image to build container from
     container_name: mean_mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: $MONGO_ROOT_USERNAME
-      MONGO_INITDB_ROOT_PASSWORD: $MONGO_ROOT_PASSWORD
-      MONGO_INITDB_DATABASE: $MONGO_DATABASE_NAME
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_ROOT_PASSWORD
+      - MONGO_INITDB_DATABASE=$MONGO_DATABASE_NAME
     volumes:
       - ./mongo:/home/mongodb
       # Copies the files from /docker folder containing cong to /docker-entrypoint-initdb.d/ where init scrips for conainer run.
