@@ -3,12 +3,13 @@ version: "3.3" # specify docker-compose version
 # Define the services/containers to be run
 services:
   database: # name of service: database
-    image: mongo:latest # specify image to build container from
-    container_name: mean_mongo
+    image: mongo:4.0.3 # specify image to build container from
+    container_name: mean_mongo     
+    restart: always
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=$MONGO_ROOT_USERNAME
-      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_ROOT_PASSWORD
-      - MONGO_INITDB_DATABASE=$MONGO_DATABASE_NAME
+      MONGO_INITDB_ROOT_USERNAME: backend_admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: ecommerce
     volumes:
       - ./mongo:/home/mongodb
       # Copies the files from /docker folder containing cong to /docker-entrypoint-initdb.d/ where init scrips for conainer run.
