@@ -5,7 +5,7 @@ db.createUser(
         roles: [
             {
                 role: "root",
-                db: "ecommerce"
+                db: "admin"
             }
         ]
     }
