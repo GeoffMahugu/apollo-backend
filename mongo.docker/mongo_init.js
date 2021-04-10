@@ -13,15 +13,15 @@ require('dotenv').config();
 //         ]
 //     }
 // );
-db.auth('backend_admin', 'password');
-console.log('AUTHENTICATED -------------------------------------------');
-console.log(db);
-db = db.getSiblingDB('ecommerce');
-db.createCollection('TestDBConnectionDocuments'),
-    db.getCollection('TestDBConnectionDocuments'),
+// db.auth('backend_admin', 'password');
+// console.log('AUTHENTICATED -------------------------------------------');
+// console.log(db);
+// db = db.getSiblingDB('ecommerce');
+// db.createCollection('TestDBConnectionDocuments'),
+//     db.getCollection('TestDBConnectionDocuments'),
 
-    console.log('GET SIBLING -------------------------------------------');
-console.log(db);
+//     console.log('GET SIBLING -------------------------------------------');
+// console.log(db);
 db.createUser(
     {
         user: "backend_admin",
