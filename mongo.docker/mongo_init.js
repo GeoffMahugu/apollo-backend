@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 db.createUser(
     {
-        user: "backend_admin",
-        pwd: "password",
+        user: `${process.env.MONGO_INITDB_ROOT_USERNAME}`,
+        pwd: `${process.env.MONGO_INITDB_ROOT_PASSWORD}`,
         roles: [
             {
                 role: "root",
