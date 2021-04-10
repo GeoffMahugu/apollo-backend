@@ -16,5 +16,5 @@ services:
       - ./mongo.docker/:/docker-entrypoint-initdb.d/
       - ./mongo/db:/data/db
     ports:
-      - "27017:27017" # specify port forewarding
+      - "${MONGO_DATABASE_PORT}:27017" # specify port forewarding
 
