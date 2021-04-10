@@ -14,5 +14,4 @@ To access the docker image run ``docker ps`` to get the ID of the running contai
 
 in my case that would be:
 
-``mongo -u admin -p password --authenticationDatabase mean-ecommerce``
-``mongodb+srv://backend_admin:password@localhost:27017/admin``
+``mongo -u backend_admin -p password --authenticationDatabase ecommerce``
