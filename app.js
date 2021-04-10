@@ -1,5 +1,5 @@
 // # IMPORTS -/
-
+require('dotenv').config()
 const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -36,7 +36,7 @@ app.use(
 
 mongoose
   .connect(
-    'mongodb://backend_admin:password@localhost:27017/mean-ecommerce',
+    `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@${process.env.MONGO_DATABASE_HOST}:${process.env.MONGO_DATABASE_PORT}/${process.env.MONGO_INITDB_DATABASE}`,
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,

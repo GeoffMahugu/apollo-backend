@@ -4,8 +4,8 @@ db.createUser(
         pwd: "password",
         roles: [
             {
-                role: "readWrite",
-                db: "mean-ecommerce"
+                role: "root",
+                db: "admin"
             }
         ]
     }

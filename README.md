@@ -102,7 +102,7 @@ db.createUser(
         roles: [
             {
                 role: "readWrite",
-                db: "mean-ecommerce"
+                db: "ecommerce"
             }
         ]
     }
@@ -127,7 +127,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: backend_admin
       MONGO_INITDB_ROOT_PASSWORD: password
-      MONGO_INITDB_DATABASE: mean-ecommerce
+      MONGO_INITDB_DATABASE: ecommerce
     volumes:
       - ./mongo:/home/mongodb
       - ./docker/:/docker-entrypoint-initdb.d/
@@ -139,7 +139,7 @@ services:
 
 This will create a MongoDatabase container named ``mean_mongo``
 
-This will also create a database named ``mean-ecommerce`` database username will be ``backend_admin`` with a password ``password``
+This will also create a database named ``ecommerce`` database username will be ``backend_admin`` with a password ``password``
 
 #### Run Docker Images
 
@@ -219,7 +219,7 @@ app.use(
 
 mongoose
   .connect(
-    'mongodb://backend_admin:password@localhost:27017/mean-ecommerce',
+    'mongodb://backend_admin:password@localhost:27017/ecommerce',
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,
