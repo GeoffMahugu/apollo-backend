@@ -1,10 +1,10 @@
-import { buildSchema } from 'graphql';
+const { buildSchema } = require('graphql');
 
-export default buildSchema(`
+module.exports = buildSchema(`
     type Product{
         _id:ID!
         name: String!
-        description: StriWng!
+        description: String!
         price: Float!
         discount: Int
         created_at: String!
@@ -31,4 +31,4 @@ export default buildSchema(`
         query: RootQuery
         mutation: RootMutation
     }
-`);
+`)
