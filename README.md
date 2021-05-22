@@ -3,6 +3,12 @@
 This documentation will contain the setup guide to set up a simple NodeJS backend with a graphql service.
 We will be using the MEAN stack, backend being MongoDB and using Mongoose to do the ORM operations.
 
+The full writeup for the project can be found in this blog: ![How to build a GraphQL API backend with Express and MongoDB](https://javascript.plainenglish.io/graphql-express-mongo-backend-d41625f728bf)
+
+<img width="1920" alt="GraphQL Express Mongo (7)" src="https://user-images.githubusercontent.com/17265995/119226372-6d72a480-bb11-11eb-94ad-ac5cb2cd4aeb.png">
+
+### Screenshot
+
 ![Screenshot from 2021-03-19 16-32-39](https://user-images.githubusercontent.com/17265995/111789082-d51e3080-88d1-11eb-85e9-9ecc3708a31f.jpg)
 
 
@@ -35,7 +41,6 @@ Then create your entry app. In my case will be using ``app.js``
 Paste the Hello World starter code in the ``app.js`` file:
 
 ```
-
 const express = require('express')
 const app = express()
 const port = 3000
@@ -47,7 +52,6 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
-
 
 ```
 
