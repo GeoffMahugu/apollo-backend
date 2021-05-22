@@ -1,4 +1,4 @@
-## MEAN STACK - Aplollo GraphQL Setup
+## MEAN STACK - Aplollo GraphQL
 
 This documentation will contain the setup guide to set up a simple NodeJS backend with a graphql service.
 We will be using the MEAN stack, backend being MongoDB and using Mongoose to do the ORM operations.
@@ -419,4 +419,10 @@ response should be (close to this):
 
 
 
-**FIN**
+**Conclusion**
+
+Feel free to use the project as a boilerplate to get you up and running quickly. 
+
+Any Pull Requests to improve the project and help **MEAN STACK / GRAPHQL** developers will be much appreciated 😀
+
+With ❤️ from the creator.
