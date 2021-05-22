@@ -3,7 +3,7 @@
 This documentation will contain the setup guide to set up a simple NodeJS backend with a graphql service.
 We will be using the MEAN stack, backend being MongoDB and using Mongoose to do the ORM operations.
 
-The full writeup for the project can be found in this blog: ![How to build a GraphQL API backend with Express and MongoDB](https://javascript.plainenglish.io/graphql-express-mongo-backend-d41625f728bf)
+The full writeup for the project can be found in this blog: [How to build a GraphQL API backend with Express and MongoDB](https://javascript.plainenglish.io/graphql-express-mongo-backend-d41625f728bf)
 
 <img width="1920" alt="GraphQL Express Mongo (7)" src="https://user-images.githubusercontent.com/17265995/119226372-6d72a480-bb11-11eb-94ad-ac5cb2cd4aeb.png">
 
